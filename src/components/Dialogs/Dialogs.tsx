@@ -3,14 +3,23 @@ import s from "./Dialogs.module.scss";
 
 type DialogProps = {
   name: string;
-  id?: string;
+  id: number;
 };
 
 type MessageProps = {
   text: string;
 };
 
-const Dialog = ({ name, id }: DialogProps) => {
+interface DialogData {
+  id: number;
+  name: string;
+}
+interface MessageData {
+  id: number;
+  message: string;
+}
+
+const DialogItem = ({ name, id }: DialogProps) => {
   return (
     <li className={s.dialog + " " + s.active}>
       <NavLink to={"/dialog/" + id}>{name}</NavLink>
@@ -23,22 +32,35 @@ const Message = ({ text }: MessageProps) => {
 };
 
 const Dialogs = () => {
+  let dialogData: DialogData[] = [
+    { id: 1, name: "Bob" },
+    { id: 2, name: "Denis" },
+    { id: 3, name: "The Boys" },
+    { id: 4, name: "Vlad" },
+  ];
+  let messageData: MessageData[] = [
+    { id: 1, message: "Hello World" },
+    { id: 2, message: "Hello" },
+    { id: 3, message: "Everyone has one's own path." },
+    { id: 4, message: "Love is my religion." },
+  ];
+
+  let dialogsElement = dialogData.map((d) => (
+    <DialogItem name={d.name} id={d.id} />
+  ));
+
+  let messagesElement = messageData.map((m) => <Message text={m.message} />);
+
   return (
     <div className={s.dialogs}>
       <h2 className={s.pageTitle}>Dialogs</h2>
       <div className={s.dialogsItems}>
         <ul>
-          <Dialog name="Men" id="1" />
-          <Dialog name="Denis" id="2" />
-          <Dialog name="The Boys" id="3" />
-          <Dialog name="Vlad" id="3" />
+          {dialogsElement}
         </ul>
       </div>
       <div className={s.messages}>
-        <Message text="Hello World" />
-        <Message text="Hello" />
-        <Message text="Everyone has one's own path." />
-        <Message text="Love is my religion." />
+        { messagesElement}
       </div>
     </div>
   );

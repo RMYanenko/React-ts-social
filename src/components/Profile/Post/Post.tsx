@@ -1,14 +1,22 @@
 import s from "./Post.module.scss";
 
-const Post = (props: any) => {
+type PostsProps = {
+  message: string,
+  likesCount: number,
+  id?: number,
+  img?: string
+}
+
+const Post = ({message, likesCount, img, id} : PostsProps) => {
   return (
     <div className={s.postContainer}>
       <img
-        src="https://www.pngarea.com/pngm/122/7623076_spacex-logo-png-spacex-ses-10-mission-patch.png"
+        src={img}
         alt="img"
       />
-      <div className="text-wrapper">
-        <p>{props.message}</p>
+      <div className={s.textWrapper}>
+        <p>{message}</p>
+        <span className={s.likesCount}>{likesCount}</span>
       </div>
     </div>
   );
