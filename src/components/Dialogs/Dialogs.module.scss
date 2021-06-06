@@ -1,0 +1,31 @@
+.dialogs {
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "nav messages";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 2fr 9fr;
+  .pageTitle {
+    grid-area: title;
+  }
+  .dialogsItems {
+    grid-area: nav;
+    border-right: 1px solid white;
+    margin-right: 10px;
+    .dialog{
+        padding: 5px;
+        
+    }
+    .active {
+        color: red;
+    }
+    
+  }
+  .messages {
+    grid-area: messages;
+    .message {
+        padding: 5px;
+    }
+  }
+}

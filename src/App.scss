@@ -1,0 +1,99 @@
+$primary-color-dark: #00796b;
+$primary-color: #009688;
+$primary-color-light: #b2dfdb;
+$primary-color-text: #ffffff;
+$accent-color: #ffc107;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #bdbdbd;
+
+body {
+  color: $primary-color-text;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav content";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 2fr 10fr;
+  width: 1320px;
+  // margin: 0 auto;
+}
+
+.header {
+  grid-area: header;
+  background-color: $primary-color-dark;
+  color: $primary-color-text;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: $primary-color-light;
+  min-height: calc(100vh - 110px);
+}
+
+.main {
+  grid-area: content;
+  background-color: $divider-color;
+}
+
+.main-banner {
+  width: 100%;
+  height: 350px;
+}
+
+.textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.btn {
+  background-color: $accent-color;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: $primary-color-text;
+  border: 1px solid $primary-color-text;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  &:hover {
+    background-color: $primary-color-text;
+    color: $accent-color;
+  }
+}
+
+.nav {
+  padding: 5px;
+  ul li {
+    a {
+      padding: 5px 10px;
+      color: $primary-text-color;
+      text-decoration: none;
+      padding: 2px 5px;
+    }
+    a.active {
+      color: $accent-color;
+      font-weight: bold;
+      background-color: $primary-color-text;
+    }
+  }
+}
+
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

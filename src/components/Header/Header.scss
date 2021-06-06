@@ -1,0 +1,15 @@
+.header {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    &-logo {
+        width: 90px;
+        height: auto;
+        margin-right: 50px;
+    }
+    &-text {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    
+}
