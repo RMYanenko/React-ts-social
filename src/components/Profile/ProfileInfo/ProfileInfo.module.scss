@@ -1,0 +1,19 @@
+.profileInfo {
+  margin-bottom: 25px;
+  &Banner img {
+    width: 100%;
+    max-height: 400px;
+    margin-bottom: 25px;
+  }
+  &Description {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    .avatar {
+      width: 150px;
+      border-radius: 50%;
+      background-color: black;
+      margin-right: 25px;
+    }
+  }
+}
