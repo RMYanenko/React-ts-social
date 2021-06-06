@@ -6,6 +6,10 @@ type DialogProps = {
   id?: string;
 };
 
+type MessageProps = {
+  text: string;
+};
+
 const Dialog = ({ name, id }: DialogProps) => {
   return (
     <li className={s.dialog + " " + s.active}>
@@ -14,7 +18,11 @@ const Dialog = ({ name, id }: DialogProps) => {
   );
 };
 
-const Dialogs = (props: DialogProps) => {
+const Message = ({ text }: MessageProps) => {
+  return <div className={s.message}>{text}</div>;
+};
+
+const Dialogs = () => {
   return (
     <div className={s.dialogs}>
       <h2 className={s.pageTitle}>Dialogs</h2>
@@ -23,14 +31,14 @@ const Dialogs = (props: DialogProps) => {
           <Dialog name="Men" id="1" />
           <Dialog name="Denis" id="2" />
           <Dialog name="The Boys" id="3" />
-          <Dialog name="Vlad"  id="3" />
+          <Dialog name="Vlad" id="3" />
         </ul>
       </div>
       <div className={s.messages}>
-        <div className={s.message}>Hi</div>
-        <div className={s.message}>Hello</div>
-        <div className={s.message}>Everyone has one's own path.</div>
-        <div className={s.message}>Love is my religion</div>
+        <Message text="Hello World" />
+        <Message text="Hello" />
+        <Message text="Everyone has one's own path." />
+        <Message text="Love is my religion." />
       </div>
     </div>
   );
