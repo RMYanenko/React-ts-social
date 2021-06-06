@@ -9,19 +9,6 @@
   .pageTitle {
     grid-area: title;
   }
-  .dialogsItems {
-    grid-area: nav;
-    border-right: 1px solid white;
-    margin-right: 10px;
-    .dialog{
-        padding: 5px;
-        
-    }
-    .active {
-        color: red;
-    }
-    
-  }
   .messages {
     grid-area: messages;
     .message {

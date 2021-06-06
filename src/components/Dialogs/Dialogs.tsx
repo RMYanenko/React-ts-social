@@ -1,14 +1,7 @@
-import { NavLink } from "react-router-dom";
 import s from "./Dialogs.module.scss";
+import DialogItem from './DilogItem/DilogItem';
+import Message from './Message/Message';
 
-type DialogProps = {
-  name: string;
-  id: number;
-};
-
-type MessageProps = {
-  text: string;
-};
 
 interface DialogData {
   id: number;
@@ -19,17 +12,7 @@ interface MessageData {
   message: string;
 }
 
-const DialogItem = ({ name, id }: DialogProps) => {
-  return (
-    <li className={s.dialog + " " + s.active}>
-      <NavLink to={"/dialog/" + id}>{name}</NavLink>
-    </li>
-  );
-};
 
-const Message = ({ text }: MessageProps) => {
-  return <div className={s.message}>{text}</div>;
-};
 
 const Dialogs = () => {
   let dialogData: DialogData[] = [
